@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Repartidores</string>
+    <string name="texto1">Meceros</string>
+    <string name="texto2">Pedir pedidos</string>
+    <string name="texto3">Aceptar</string>
+    <string name="texto4">Lista de pedidos</string>
+    <string name="texto5">Pedidos en espera</string>
+    <string name="texto6">Cerrar sesion</string>
+    <string name="texto7">Confirmar</string>
 </resources>
