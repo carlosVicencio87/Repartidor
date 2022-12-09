@@ -108,7 +108,7 @@ public class Estacion extends AppCompatActivity {
         id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
         idSesion= id_SesionSher.getString("idSesion","no hay");
         idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
-        id_mesero = idSher.getString("idSesion","no hay");
+        id_mesero = idSher.getString("id","no hay");
         nombreMeseroSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
         meseroAsignado = idSher.getString("nombre","no hay");
 
