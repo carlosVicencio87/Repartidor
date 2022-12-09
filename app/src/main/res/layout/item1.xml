@@ -175,20 +175,68 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estado;"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/estadoPedido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estado"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
             android:id="@+id/caja_mecero_asignado"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:visibility="gone">
-            <TextView
-                android:id="@+id/mecero_asignado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mecero asignado"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
                 android:gravity="center"
-                android:textSize="20dp"/>
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mesero asignado;"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/mecero_asignado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mesero asignado"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+            </LinearLayout>
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -227,8 +275,8 @@
             <TextView
                 android:id="@+id/aceptar_pedido"
                 android:layout_width="120dp"
-                android:layout_height="30dp"
-                android:text="aceptar pedido"
+                android:layout_height="40dp"
+                android:text="confirmar pedido del cliente"
                 android:gravity="center"
                 android:textSize="15dp"
                 android:background="@drawable/borde"
@@ -237,7 +285,7 @@
             <TextView
                 android:id="@+id/rechazar_pedido"
                 android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:text="rechazar pedido"
                 android:gravity="center"
                 android:textSize="15dp"

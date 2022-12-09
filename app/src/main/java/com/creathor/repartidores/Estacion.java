@@ -45,7 +45,7 @@ public class Estacion extends AppCompatActivity {
     public ArrayList<SpinnerModel> listaMeceros = new ArrayList<>();
     private AdapterMeceros adapterMeceros;
     private String seleccion_mecero,selector_pedidos,strCadena,
-            id_pedido_actual,id_encontrada,comanda_encontrada,mesa_encontrada,precio_encontrado,fecha_encontrada, id_negocio,idSesion,meseroAsignado;
+            id_pedido_actual,id_encontrada,comanda_encontrada,mesa_encontrada,precio_encontrado,fecha_encontrada, id_mesero,idSesion,meseroAsignado;
     private Estacion activity;
     private RecyclerView lista_pedidos_recycler,lista_espera_recycler,meceros_disponibles;
     private AdapterListaPedidos adapterListaPedidos,adapterListaEspera;
@@ -108,7 +108,10 @@ public class Estacion extends AppCompatActivity {
         id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
         idSesion= id_SesionSher.getString("idSesion","no hay");
         idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
-        id_negocio = idSher.getString("idSesion","no hay");
+        id_mesero = idSher.getString("idSesion","no hay");
+        nombreMeseroSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        meseroAsignado = idSher.getString("nombre","no hay");
+
 
 
 
@@ -121,7 +124,7 @@ public class Estacion extends AppCompatActivity {
                     @Override
                     public void run() {
                         pedir_pedidos();
-                        Log.e("id",""+ id_negocio);
+                        Log.e("id",""+ id_mesero);
                         Log.e("idEstacion",""+idSesion);
 
 
@@ -182,7 +185,7 @@ public class Estacion extends AppCompatActivity {
                         Log.e("mecero",""+seleccion_mecero);
 
 
-                        listaPedidosAsignados.add( new ListaPedidosRecycler(id_encontrada,mesa_encontrada,comanda_encontrada,precio_encontrado,fecha_encontrada,meseroAsignado));
+      /*                  listaPedidosAsignados.add( new ListaPedidosRecycler(id_encontrada,mesa_encontrada,comanda_encontrada,precio_encontrado,fecha_encontrada,meseroAsignado));*/
                         Log.e("listaNueva",""+comanda_encontrada);
                         listaPedidosRecyclers.remove(i);
                         caja_asignar_mecero.setVisibility(View.GONE);
@@ -191,7 +194,7 @@ public class Estacion extends AppCompatActivity {
                         executorService.execute(new Runnable() {
                             @Override
                             public void run() {
-                                actualizar_pedido_cliente();
+                                /*actualizar_pedido_cliente();*/
                                 Log.e("entnedi_señor_calamardo","y esto igual");
                             }
                         });
@@ -235,7 +238,7 @@ public class Estacion extends AppCompatActivity {
                         Log.e("jsonObject333333:",""+limpio);
 
 
-/*
+
                         try {
 
                             json_pedido=new JSONArray(response);
@@ -250,10 +253,12 @@ public class Estacion extends AppCompatActivity {
                                 String strPrecio= jsonObject.getString("precio");
                                 String strFecha_ingreso = jsonObject.getString("fecha_ingreso");
                                 String strMecero=jsonObject.getString("meseroAsignado");
+                                String strEstado=jsonObject.getString("estado");
+
                                 String strFecha_entrega = jsonObject.getString("fecha_entrega");
                                 String strFecha_final = jsonObject.getString("fecha_final");
 
-                                listaPedidosRecyclers.add(new ListaPedidosRecycler(strId,strMesa,strComanda,strPrecio,strFecha_ingreso,strMecero));
+                                listaPedidosRecyclers.add(new ListaPedidosRecycler(strId,strMesa,strComanda,strPrecio,strFecha_ingreso,strMecero,strEstado));
 
                                 Log.e("pedidos",strComanda);
                             }
@@ -270,7 +275,7 @@ public class Estacion extends AppCompatActivity {
 
                         } catch (JSONException e) {
                             Log.e("errorRespuestaMovies", String.valueOf(e));
-                        }*/
+                        }
                         Log.e("jsonapedidos:",""+json_pedido);
                     }
                 },
@@ -287,8 +292,8 @@ public class Estacion extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
-                map.put("id", id_negocio);
-                map.put("idSesion",idSesion);
+                map.put("id_mesero", id_mesero);
+                map.put("meseroAsignado",meseroAsignado);
                 return map;
             }
         };
@@ -470,14 +475,14 @@ public class Estacion extends AppCompatActivity {
 
     }
 */
-    public void aceptar_pedido(String id_pedido){
+ /*   public void aceptar_pedido(String id_pedido){
         id_pedido_actual=id_pedido;
         caja_asignar_mecero.setVisibility(View.VISIBLE);
         caja_lista_pedidos_recycler.setVisibility(View.GONE);
         Log.e("id_activyty",""+id_pedido);
 
-    }
-    public void actualizar_pedido_cliente()
+    }*/
+ /*   public void actualizar_pedido_cliente()
     {
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"actualizar_pedido_cliente.php",
@@ -500,7 +505,7 @@ public class Estacion extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
 
-                map.put("id_negocio",id_negocio);
+                map.put("id_negocio", id_mesero);
                 map.put("id",id_encontrada);
                 map.put("fecha_ingreso",fecha_encontrada);
                 map.put("meseroAsignado",meseroAsignado);
@@ -509,5 +514,5 @@ public class Estacion extends AppCompatActivity {
             }
         };
         requestQueue.add(request);
-    }
+    }*/
 }
