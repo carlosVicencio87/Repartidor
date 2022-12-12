@@ -69,8 +69,6 @@ public class Estacion extends AppCompatActivity {
         activity = this;
         context=this;
         SERVIDOR_CONTROLADOR = new Servidor().getIplocal();
-        caja_pedir_pedidos=findViewById(R.id.caja_pedir_pedidos);
-        pedir_pedidos=findViewById(R.id.pedir_pedidos);
         caja_lista_pedidos_recycler=findViewById(R.id.caja_lista_pedidos_recycler);
         meceros_disponibles=findViewById(R.id.meceros_disponibles);
         lista_pedidos_recycler=findViewById(R.id.lista_pedidos_recycler);
@@ -111,31 +109,11 @@ public class Estacion extends AppCompatActivity {
         id_mesero = idSher.getString("id","no hay");
         nombreMeseroSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
         meseroAsignado = idSher.getString("nombre","no hay");
+        pedir_pedidos();
 
 
 
 
-        pedir_pedidos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                caja_pedir_pedidos.setVisibility(View.GONE);
-                executorService.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        pedir_pedidos();
-                        Log.e("id",""+ id_mesero);
-                        Log.e("idEstacion",""+idSesion);
-
-
-                        Log.e("puto_topito","y omar igual");
-                    }
-                });
-                caja_lista_pedidos_recycler.setVisibility(view.VISIBLE);
-
-
-            }
-        });
 
 
         confirmar_mecero.setOnClickListener(new View.OnClickListener() {

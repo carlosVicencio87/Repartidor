@@ -3,8 +3,8 @@
     <string name="texto1">Meceros</string>
     <string name="texto2">Pedir pedidos</string>
     <string name="texto3">Aceptar</string>
-    <string name="texto4">Lista de pedidos</string>
-    <string name="texto5">Pedidos en espera</string>
+    <string name="texto4">Lista de pedidos por confirmar</string>
+    <string name="texto5">Pedidos listos para entrega</string>
     <string name="texto6">Cerrar sesion</string>
     <string name="texto7">Confirmar</string>
 </resources>

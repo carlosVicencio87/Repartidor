@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="id"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:textSize="20dp"/>
             </LinearLayout>
@@ -42,6 +43,7 @@
                 android:gravity="center">
                 <TextView
                     android:id="@+id/id"
+                    android:textColor="@color/black"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -64,6 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="mesa;"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:textSize="20dp"/>
             </LinearLayout>
@@ -74,6 +77,8 @@
                 android:layout_weight="1">
                 <TextView
                     android:id="@+id/mesa"
+                    android:textColor="@color/black"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="mesa"
@@ -92,6 +97,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="comanda;"
@@ -104,6 +111,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:id="@+id/comanda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -123,6 +132,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="precio;"
@@ -135,6 +146,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:id="@+id/precio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -154,6 +167,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="fecha de ingreso;"
@@ -166,6 +181,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:id="@+id/fecha_ingreso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -185,6 +202,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Estado;"
@@ -197,6 +216,8 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:textColor="@color/black"
+
                     android:id="@+id/estadoPedido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -217,6 +238,9 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+
+                    android:textColor="@color/black"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mesero asignado;"
@@ -229,6 +253,9 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+
+                    android:textColor="@color/black"
+
                     android:id="@+id/mecero_asignado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -243,6 +270,8 @@
             android:gravity="center"
             android:visibility="gone">
             <TextView
+                android:textColor="@color/black"
+
                 android:id="@+id/fecha_entrega"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -273,6 +302,8 @@
             android:layout_margin="5dp"
             android:visibility="visible">
             <TextView
+                android:textColor="@color/black"
+
                 android:id="@+id/aceptar_pedido"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
@@ -283,10 +314,12 @@
                 android:layout_margin="15dp"
                 />
             <TextView
+                android:textColor="@color/black"
+
                 android:id="@+id/rechazar_pedido"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
-                android:text="rechazar pedido"
+                android:text="solicitar cancelacion"
                 android:gravity="center"
                 android:textSize="15dp"
                 android:background="@drawable/borde"
@@ -301,6 +334,8 @@
             android:layout_margin="5dp"
             android:visibility="gone">
             <TextView
+                android:textColor="@color/black"
+
                 android:id="@+id/preparando"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
