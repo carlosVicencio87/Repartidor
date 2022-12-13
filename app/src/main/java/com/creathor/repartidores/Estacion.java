@@ -46,7 +46,7 @@ public class Estacion extends AppCompatActivity {
     private AdapterMeceros adapterMeceros;
     private String seleccion_mecero,selector_pedidos,strCadena,
             id_pedido_actual,id_encontrada,comanda_encontrada,mesa_encontrada,precio_encontrado,fecha_encontrada,
-            id_mesero,idSesion,meseroAsignado,strContenido,notaMesero,id_contenido_actual,notaMesero_actual;
+            id_mesero,idSesion,meseroAsignado,strContenido,notaMesero,id_contenido_actual,notaMesero_actual,strId_mesero,strId;
     private Estacion activity;
     private RecyclerView lista_pedidos_recycler,lista_espera_recycler,contenido_pedido;
     private AdapterListaPedidos adapterListaPedidos,adapterListaEspera;
@@ -188,12 +188,12 @@ public class Estacion extends AppCompatActivity {
 
                                 //Log.e("nombreMovies", String.valueOf(jsonObject));
 
-                                String strId = jsonObject.getString("id");
+                                strId = jsonObject.getString("id");
                                 String strMesa = jsonObject.getString("mesa");
                                 String strComanda = jsonObject.getString("comanda");
                                 String strPrecio= jsonObject.getString("precio");
                                 String strFecha_ingreso = jsonObject.getString("fecha_ingreso");
-                                String strId_mesero=jsonObject.getString("id_mesero");
+                                 strId_mesero=jsonObject.getString("id_mesero");
                                 String strMecero=jsonObject.getString("meseroAsignado");
 
                                 String strEstado=jsonObject.getString("estado");
@@ -204,8 +204,8 @@ public class Estacion extends AppCompatActivity {
                                 String strFecha_final = jsonObject.getString("fecha_final");
 
                                 listaPedidosRecyclers.add(new ListaPedidosRecycler(strId,strMesa,strComanda,strPrecio,strFecha_ingreso,strId_mesero,strMecero,strEstado,strContenido,strNotaMesero));
-
-                                Log.e("pedidos",strComanda);
+                                Log.e("idm",strId);
+                                Log.e("idmesero",strId_mesero);
                                 Log.e("contenidos",strContenido);
 
                             }
@@ -431,18 +431,9 @@ public class Estacion extends AppCompatActivity {
             String id_tmp=listaPedidosRecyclers.get(i).getId();
 
             if(id_tmp.equals(id_pedido_actual)){
-
+                id_encontrada=listaPedidosRecyclers.get(i).getId();
                 listaPedidosRecyclers.remove(i);
-                id_encontrada = listaPedidosRecyclers.get(i).getId();
-                String MesaCocina = listaPedidosRecyclers.get(i).getMesa();
-                String strComanda = listaPedidosRecyclers.get(i).getComanda();
-                String strPrecio= listaPedidosRecyclers.get(i).getPrecio();
-                fecha_encontrada = listaPedidosRecyclers.get(i).getFecha_ingreso();
-                id_mesero=listaPedidosRecyclers.get(i).getId_mesero();
-                meseroAsignado=listaPedidosRecyclers.get(i).getMecero_asignado();
-                String strEstado=listaPedidosRecyclers.get(i).getEstadoPedido();
-                strContenido=listaPedidosRecyclers.get(i).getEstadoPedido();
-                notaMesero_actual=listaPedidosRecyclers.get(i).getNota_mecero();
+
 
                 executorService.execute(new Runnable() {
                     @Override
@@ -521,11 +512,14 @@ public class Estacion extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
-
-                map.put("id_mesero", id_mesero);
-                map.put("id",id_encontrada);
+                map.put("id",  id_encontrada);
+                map.put("id_mesero", strId_mesero);
                 map.put("meseroAsignado",meseroAsignado);
                 map.put("nota_mesero",notaMesero_actual);
+                Log.e("id", id_encontrada);
+                Log.e("idmesero",strId_mesero);
+                Log.e("mesero",meseroAsignado);
+                Log.e("nota",notaMesero_actual);
 
                 return map;
             }

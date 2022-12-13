@@ -62,6 +62,7 @@ public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedido
         holder.statePedido.setText(estadoPedido);
         holder.mecer_asigned.setText(mecero_asignado);
 
+
       /*  holder.date_entrega.setText(fecha_entrega);
         holder.date_end.setText(fecha_final);*/
 
