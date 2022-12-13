@@ -7,4 +7,6 @@
     <string name="texto5">Pedidos listos para entrega</string>
     <string name="texto6">Cerrar sesion</string>
     <string name="texto7">Confirmar</string>
+    <string name="texto8">Notas del servicio</string>
+
 </resources>

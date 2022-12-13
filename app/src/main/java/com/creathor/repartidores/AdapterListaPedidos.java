@@ -88,7 +88,7 @@ public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedido
                 int posicion=holder.getAdapterPosition();
                 id = pedidosrecycler.get(posicion).getId();
                 Log.e("id","2"+id);
-              /*  ((Estacion)context).aceptar_pedido(id);*/
+               ((Estacion)context).aceptar_pedido(id);
 
 
 
