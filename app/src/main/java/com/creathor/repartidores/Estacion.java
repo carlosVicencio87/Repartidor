@@ -46,7 +46,7 @@ public class Estacion extends AppCompatActivity {
     private AdapterMeceros adapterMeceros;
     private String seleccion_mecero,selector_pedidos,strCadena,
             id_pedido_actual,id_encontrada,comanda_encontrada,mesa_encontrada,precio_encontrado,fecha_encontrada,
-            id_mesero,idSesion,meseroAsignado,strContenido,notaMesero,id_contenido_actual,notaMesero_actual,strId_mesero,strId;
+            id_mesero,idSesion,meseroAsignado,strContenido,notaMesero,id_contenido_actual,notaMesero_actual,strId_mesero,strId,strNotaMesero;
     private Estacion activity;
     private RecyclerView lista_pedidos_recycler,lista_espera_recycler,contenido_pedido;
     private AdapterListaPedidos adapterListaPedidos,adapterListaEspera;
@@ -424,7 +424,9 @@ public class Estacion extends AppCompatActivity {
 */
     public void enviarPedidoCocina(String id_contenido,String notaMesero){
         id_contenido_actual=id_contenido;
-        notaMesero_actual=notaMesero;
+        strNotaMesero=notaMesero;
+
+
         caja_pedido_cliente.setVisibility(View.GONE);
         caja_lista_pedidos_recycler.setVisibility(View.VISIBLE);
         for (int i=0;i<listaPedidosRecyclers.size();i++){
@@ -467,7 +469,7 @@ public class Estacion extends AppCompatActivity {
                 String strExtras=jsonObject.getString("extras");
                 String strImagen=jsonObject.getString("imagen");
                 String strSeccion=jsonObject.getString("seccion");
-
+                strNotaMesero=jsonObject.getString("nota_mesero");
                 Log.e("ID",strId);
                 Log.e("NOMBRE",strNombre);
                 Log.e("CANTIDAD",strCantidad);
@@ -519,7 +521,7 @@ public class Estacion extends AppCompatActivity {
                 Log.e("id", id_encontrada);
                 Log.e("idmesero",strId_mesero);
                 Log.e("mesero",meseroAsignado);
-                Log.e("nota",notaMesero_actual);
+//                Log.e("nota",notaMesero_actual);
 
                 return map;
             }
