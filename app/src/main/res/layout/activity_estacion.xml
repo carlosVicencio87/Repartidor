@@ -155,7 +155,7 @@
         android:layout_height="match_parent"
         android:gravity="top"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -166,7 +166,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginBottom="50dp">
+          >
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/contenido_pedido"
@@ -176,34 +176,88 @@
                 android:hint="@string/texto2"
                 android:textColor="@color/black"
                 android:textSize="30dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/caja_decisiones"
             android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:visibility="gone">
-
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent">
             <TextView
-                android:id="@+id/confirmar_mecero"
-                android:layout_width="250dp"
-                android:layout_height="70dp"
-                android:layout_margin="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/borde"
-                android:gravity="center"
-                android:text="@string/texto7"
                 android:textColor="@color/black"
-                android:textSize="35dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                android:id="@+id/enviar_pedido_cocina"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:text="enviar pedido a cocina"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:background="@drawable/borde"
+                android:layout_margin="15dp"
+                />
+            <TextView
+                android:textColor="@color/black"
+
+                android:id="@+id/solicitar_cancelacion"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:text="solicitar cancelacion"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:background="@drawable/borde"
+                android:layout_margin="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/caja_preparando"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <TextView
+                android:textColor="@color/black"
+
+                android:id="@+id/preparando"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:text="preparando..."
+                android:gravity="center"
+                android:textSize="15dp"
+                android:background="@drawable/borde"
+                android:layout_margin="15dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/caja_terminar_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <TextView
+                android:id="@+id/archivar_pedido"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:text="archivar"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:background="@drawable/borde"
+                android:layout_margin="15dp"
+                />
+        </LinearLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/caja_velo_mecero"
             android:layout_width="match_parent"
