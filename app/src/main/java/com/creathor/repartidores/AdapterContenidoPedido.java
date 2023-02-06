@@ -52,7 +52,7 @@ public class AdapterContenidoPedido extends RecyclerView.Adapter<AdapterContenid
         extras= contenidoPedidorecycler.get(position).getExtras();
         imagen= contenidoPedidorecycler.get(position).getImagen();
         seccion= contenidoPedidorecycler.get(position).getSeccion();
-        // fecha_final= pedidosrecycler.get(position).getFecha_final();
+        // fecha_final      = pedidosrecycler.get(position).getFecha_final();
 
         holder.id_content.setText(id);
         holder.name.setText(nombre);
