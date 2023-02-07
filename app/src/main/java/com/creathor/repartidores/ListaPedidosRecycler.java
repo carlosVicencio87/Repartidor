@@ -24,10 +24,11 @@ public class ListaPedidosRecycler extends AppCompatActivity {
     }
     public String getFecha_ingreso() { return fecha_ingreso;}
     public String getId_mesero() { return id_mesero; }
+    public String getNota_mecero() { return nota_mecero; }
+
     public String getMecero_asignado() { return mecero_asignado; }
     public String getEstadoPedido() { return estadoPedido; }
     public String getContenido() { return contenido; }
-    public String getNota_mecero() { return nota_mecero; }
 
    /* public String getFecha_entrega() { return fecha_entrega; }
     public String getFecha_final() { return fecha_final;}*/
@@ -57,17 +58,18 @@ public class ListaPedidosRecycler extends AppCompatActivity {
 
 
     public ListaPedidosRecycler(String id_food, String mes, String comand, String price, String date_star,String mecer_asigned,
-                                String statePed,String note_mecer,String id_meser,String content){
+                                String statePed,String id_meser,String content,String note_mecer){
 
         this.id =id_food;
         this.mesa=mes;
         this.comanda=comand;
         this.precio=price;
         this.fecha_ingreso=date_star;
+        this.nota_mecero=note_mecer;
+
         this.id_mesero=id_meser;
         this.mecero_asignado =mecer_asigned;
         this.estadoPedido=statePed;
-        this.nota_mecero=note_mecer;
         this.contenido=content;
        /* this.fecha_entrega=date_entrega;
         this.fecha_final=date_end;*/

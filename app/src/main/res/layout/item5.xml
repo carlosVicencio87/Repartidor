@@ -11,7 +11,7 @@
 
 
     <LinearLayout
-        android:id="@+id/caja_lista_pedidos_recycler"
+        android:id="@+id/caja_contenido_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -53,117 +53,106 @@
                     android:textSize="20dp"/>
             </LinearLayout>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/imagen"
+                    android:layout_width="85dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:background="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center">
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="20dp"
+                android:layout_height="18dp"
                 android:gravity="center"
                 android:layout_weight="1">
-                <TextView
-                    android:textColor="@color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:gravity="right"
-                android:layout_weight="1"
-                android:layout_gravity="right"
-                >
 
                 <TextView
-                    android:id="@+id/fecha_ingreso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="fecha ingreso"
+                    android:text="Nombre:"
                     android:textColor="@color/black"
                     android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/nombre"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="nombre"
+                    android:gravity="center"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cantidad;"
+                    android:gravity="center"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:textColor="@color/black"
+                    android:id="@+id/cantidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="cantidad"
+                    android:gravity="center"
+                    android:textSize="16dp"/>
+
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="mesa;"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/mesa"
-                    android:textColor="@color/black"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="mesa"
-                    android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:textColor="@color/black"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="comanda;"
-                    android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:textColor="@color/black"
-
-                    android:id="@+id/comanda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="comanda"
-                    android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="30dp"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:visibility="gone"
-            >
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total;"
+                    android:gravity="center"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:textColor="@color/black"
+
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="total"
+                    android:gravity="center"
+                    android:textSize="16dp"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="30dp"
@@ -174,15 +163,9 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="precio;"
+                    android:text="Precio;"
                     android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
+                    android:textSize="18dp"/>
                 <TextView
                     android:textColor="@color/black"
 
@@ -191,16 +174,44 @@
                     android:layout_height="wrap_content"
                     android:text="precio"
                     android:gravity="center"
-                    android:textSize="20dp"/>
+                    android:textSize="18dp"/>
             </LinearLayout>
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="30dp"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:visibility="gone">
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estatus:"
+                    android:gravity="center"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:textColor="@color/black"
+
+                    android:id="@+id/estatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="estatus"
+                    android:gravity="center"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="30dp"
@@ -211,22 +222,45 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Estado;"
+                    android:text="Nota de servicio;"
+                    android:gravity="center"
+                    android:textSize="18dp"/>
+                <TextView
+                    android:textColor="@color/black"
+
+                    android:id="@+id/nota_mesero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="nota"
+                    android:gravity="center"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:textColor="@color/black"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extras;"
                     android:gravity="center"
                     android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
                 <TextView
                     android:textColor="@color/black"
-
-                    android:id="@+id/estadoPedido"
+                    android:id="@+id/extras"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Estado"
+                    android:text="Extras"
                     android:gravity="center"
                     android:textSize="20dp"/>
             </LinearLayout>
@@ -242,15 +276,12 @@
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:layout_weight="1"
-                >
+                android:layout_weight="1">
                 <TextView
-
                     android:textColor="@color/black"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mesero asignado;"
+                    android:text="Seccion;"
                     android:gravity="center"
                     android:textSize="20dp"/>
             </LinearLayout>
@@ -263,14 +294,15 @@
 
                     android:textColor="@color/black"
 
-                    android:id="@+id/mecero_asignado"
+                    android:id="@+id/seccion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mesero asignado"
+                    android:text="seccion"
                     android:gravity="center"
                     android:textSize="20dp"/>
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -300,88 +332,5 @@
                 android:textSize="20dp"
                 />
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/caja_decisiones"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:visibility="visible">
-            <TextView
-                android:textColor="@color/black"
-
-                android:id="@+id/aceptar_pedido"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:text="confirmar pedido del cliente"
-                android:gravity="center"
-                android:textSize="15dp"
-                android:background="@drawable/borde"
-                android:layout_margin="15dp"
-                />
-            <TextView
-                android:textColor="@color/black"
-
-                android:id="@+id/rechazar_pedido"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:text="solicitar cancelacion"
-                android:gravity="center"
-                android:textSize="15dp"
-                android:background="@drawable/borde"
-                android:layout_margin="15dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/caja_preparando"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:visibility="gone">
-            <TextView
-                android:textColor="@color/black"
-
-                android:id="@+id/preparando"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
-                android:text="preparando..."
-                android:gravity="center"
-                android:textSize="15dp"
-                android:background="@drawable/borde"
-                android:layout_margin="15dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/caja_terminar_pedido"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:visibility="gone">
-            <TextView
-                android:id="@+id/archivar_pedido"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
-                android:text="archivar"
-                android:gravity="center"
-                android:textSize="15dp"
-                android:background="@drawable/borde"
-                android:layout_margin="15dp"
-                />
-
-        </LinearLayout>
-
-
-
     </LinearLayout>
-
-
-
-
-
 </LinearLayout>

@@ -13,32 +13,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedidos.ViewHolderRecycler>{
+public class AdapterListaPedidoEspera extends RecyclerView.Adapter<AdapterListaPedidoEspera.ViewHolderRecycler>{
     private ArrayList<ListaPedidosRecycler> pedidosrecycler;
-    ViewHolderRecycler viewholderListaPedidos;
+    AdapterListaPedidoEspera.ViewHolderRecycler viewholderListaPedidos;
     private  RecyclerView recyclerView;
     private Context context;
-    private String id,mesa,comanda,precio,fecha_ingreso,mecero_asignado,fecha_entrega,fecha_final,estadoPedido,nota_mesero;
+    private String id,mesa,comanda,precio,fecha_ingreso,mecero_asignado,nota_mesero,fecha_entrega,fecha_final,estadoPedido,id_mesero;
     private TextView aceptar_pedido;
-    private AdapterListaPedidos activity;
+    private AdapterListaPedidoEspera activity;
     private LinearLayout caja_mecero_asignado;
 
 
-    public AdapterListaPedidos(ArrayList<ListaPedidosRecycler> pedidosrecycler )
+    public AdapterListaPedidoEspera(ArrayList<ListaPedidosRecycler> pedidosrecycler )
     {
         this.pedidosrecycler =pedidosrecycler;
     }
     @Override
-    public ViewHolderRecycler onCreateViewHolder(ViewGroup parent, int viewType) {
-        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.item1,parent,false);
+    public AdapterListaPedidoEspera.ViewHolderRecycler onCreateViewHolder(ViewGroup parent, int viewType) {
+        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.item3,parent,false);
         context=parent.getContext();
         vista.setFocusable(true);
-        return new ViewHolderRecycler(vista);
+        return new AdapterListaPedidoEspera.ViewHolderRecycler(vista);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterListaPedidos.ViewHolderRecycler holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterListaPedidoEspera.ViewHolderRecycler holder, int position) {
         viewholderListaPedidos =holder;
         id = pedidosrecycler.get(position).getId();
         mesa= pedidosrecycler.get(position).getMesa();
@@ -47,6 +47,8 @@ public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedido
         fecha_ingreso= pedidosrecycler.get(position).getFecha_ingreso();
         mecero_asignado=pedidosrecycler.get(position).getMecero_asignado();
         estadoPedido=pedidosrecycler.get(position).getEstadoPedido();
+        nota_mesero=pedidosrecycler.get(position).getNota_mecero();
+        id_mesero=pedidosrecycler.get(position).getId_mesero();
         /*fecha_entrega= pedidosrecycler.get(position).getFecha_entrega();
         fecha_final= pedidosrecycler.get(position).getFecha_final();*/
 
@@ -60,42 +62,22 @@ public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedido
         holder.date_star.setText(fecha_ingreso);
         holder.statePedido.setText(estadoPedido);
         holder.mecer_asigned.setText(mecero_asignado);
+        holder.note_meser.setText(nota_mesero);
 
-
-      /*  holder.date_entrega.setText(fecha_entrega);
-        holder.date_end.setText(fecha_final);*/
-
-       /* if (!estadoPedido.equals("")){
-
-            holder.box_decisiones.setVisibility(View.GONE);
-            holder.box_preparando.setVisibility(View.VISIBLE);
-            holder.box_mecero_asignado.setVisibility(View.VISIBLE);
-            holder.mecer_asigned.setText(mecero_asignado);
-
-            Log.e("ya_esta_mecero","2"+mecero_asignado);
-
-        }
-        else{
-            holder.mecer_asigned.setVisibility(View.GONE);
-            holder.box_decisiones.setVisibility(View.VISIBLE);
-            holder.box_preparando.setVisibility(View.GONE);
-
-        }*/
-
-        holder.acept_pedido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int posicion=holder.getAdapterPosition();
-                id = pedidosrecycler.get(posicion).getId();
-                Log.e("id","2"+id);
-               ((Estacion)context).aceptar_pedido(id);
-
-            }
-        });
         holder.box_detail_pedidos_recycler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((Estacion)context).aceptar_pedido(id);
+                int posiTion2=holder.getAdapterPosition();
+                id = pedidosrecycler.get(posiTion2).getId();
+                fecha_ingreso=pedidosrecycler.get(posiTion2).getFecha_ingreso();
+                mesa=pedidosrecycler.get(posiTion2).getMesa();
+                precio=pedidosrecycler.get(posiTion2).getPrecio();
+                comanda=pedidosrecycler.get(posiTion2).getComanda();
+                mecero_asignado=pedidosrecycler.get(posiTion2).getMecero_asignado();
+                estadoPedido=pedidosrecycler.get(posiTion2).getEstadoPedido();
+                Log.e("id","2"+id);
+                ((Estacion)context).mostrarDetalleEspera(id,fecha_ingreso,mesa,precio,comanda,mecero_asignado,id_mesero,estadoPedido);
+
 
             }
         });
@@ -111,8 +93,8 @@ public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedido
 
     }
     public class ViewHolderRecycler extends RecyclerView.ViewHolder {
-        TextView id_food,mes,comand,price,date_star,mecer_asigned,date_entrega,date_end,acept_pedido,rech_pedido,statePedido;
-        LinearLayout box_mecero_asignado,box_decisiones,box_detail_pedidos_recycler;
+        TextView id_food,mes,comand,price,date_star,mecer_asigned,date_entrega,date_end,acept_pedido,rech_pedido,statePedido,note_meser;
+        LinearLayout box_mecero_asignado,box_decisiones,box_detail_pedidos_recycler,caja_detail_pedidos_espera;
 
 
         public ViewHolderRecycler(View itemView) {
@@ -131,9 +113,8 @@ public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedido
             statePedido = (TextView) itemView.findViewById(R.id.estadoPedido);
 
             box_decisiones = (LinearLayout) itemView.findViewById(R.id.caja_decisiones);
-            box_detail_pedidos_recycler=itemView.findViewById(R.id.caja_lista_pedidos_recycler);
-
-
+            note_meser=itemView.findViewById(R.id.nota_mesero);
+            box_detail_pedidos_recycler=itemView.findViewById(R.id.caja_detalle_pedidos_espera);
         }
     }
 
