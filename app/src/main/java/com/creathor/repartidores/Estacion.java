@@ -48,7 +48,7 @@ public class Estacion extends AppCompatActivity {
     private String seleccion_mecero,selector_pedidos,strCadena,adonde_vas,
             id_pedido_actual,id_encontrada,comanda_encontrada,mesa_encontrada,precio_encontrado,fecha_encontrada,
             id_mesero,idSesion,meseroAsignado,strContenido,notaMesero,
-            notaMesero_actual,strId_mesero,strId,strNotaMesero,strEstatus;
+            notaMesero_actual,strId_mesero,strId,strNotaMesero,strEstatus,strFecha_ingreso;
     private Estacion activity;
     private RecyclerView lista_pedidos_recycler,lista_espera_recycler,contenido_pedido,contenido_pedido_espera,lista_preparados_recycler;
     private AdapterListaPedidos adapterListaPedidos;
@@ -438,7 +438,7 @@ public class Estacion extends AppCompatActivity {
                 Log.e("EXTRAS",strExtras);
                 Log.e("IMAGEN",strImagen);
                 Log.e("SECCION",strSeccion);
-                listaContenidoPedidos.add(new ListaContenidoPedidos(strId,strNombre,strCantidad,strTotal,strPrecio,strExtras,strImagen,strSeccion,notaMesero,strEstatus));
+                listaContenidoPedidos.add(new ListaContenidoPedidos(strId,strNombre,strCantidad,strTotal,strPrecio,strExtras,strImagen,strSeccion,notaMesero,strEstatus,strFecha_ingreso));
 
 
             }
@@ -486,7 +486,7 @@ public class Estacion extends AppCompatActivity {
                                     String strSeccion=jsonObjectContenido2.getString("seccion");
 
 
-                                    listaContenidoPedidosEspera.add(new ListaContenidoPedidos(strId,strNombre,strCantidad,strTotal,strPrecio2,strExtras,strImagen,strSeccion,strNota_mesero,strEstatus));
+                                    listaContenidoPedidosEspera.add(new ListaContenidoPedidos(strId,strNombre,strCantidad,strTotal,strPrecio2,strExtras,strImagen,strSeccion,strNota_mesero,strEstatus,strFecha_ingreso));
 
                                 }
 
@@ -564,6 +564,7 @@ public class Estacion extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         String limpio=response;
+                        listaContenidosPreparado.clear();
                         Log.e("jsonObject5555:",""+response);
                         try {
                             json_pedidos_preparados=new JSONArray(response);
@@ -577,7 +578,7 @@ public class Estacion extends AppCompatActivity {
                                 String strMesa = jsonObject.getString("mesa");
                                 String strComanda = jsonObject.getString("comanda");
                                 String strPrecio= jsonObject.getString("precio");
-                                String strFecha_ingreso = jsonObject.getString("fecha_ingreso");
+                                strFecha_ingreso = jsonObject.getString("fecha_ingreso");
                                 String strId_mesero=jsonObject.getString("id_mesero");
                                 String strMecero=jsonObject.getString("meseroAsignado");
                                 String strEstado=jsonObject.getString("estado");
@@ -604,7 +605,7 @@ public class Estacion extends AppCompatActivity {
                                     Log.e("estatus",strEstatus);
 
                                     if (strEstatus.equals("preparado")){
-                                        listaContenidosPreparado.add(new ListaContenidoPedidos(strId,strNombre,strCantidad,strTotal,strPrecio2,strExtras,strImagen,strSeccion,strNota_mesero,strEstatus));
+                                        listaContenidosPreparado.add(new ListaContenidoPedidos(strId,strNombre,strCantidad,strTotal,strPrecio2,strExtras,strImagen,strSeccion,strNota_mesero,strEstatus,strFecha_ingreso));
 
 
                                     }

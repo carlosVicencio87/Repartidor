@@ -19,7 +19,7 @@ public class AdapterListaPreparados extends RecyclerView.Adapter<AdapterListaPre
     AdapterListaPreparados.ViewHolderRecycler viewholderContenidoPedido;
     private  RecyclerView recyclerView;
     private Context context;
-    private String id,nombre,cantidad,total,precio,extras,imagen,seccion,strNotaMesero,estatus;
+    private String id,nombre,cantidad,total,precio,extras,imagen,seccion,strNotaMesero,estatus,fecha_ingreso;
 
     private EditText nota_mesero;
 
@@ -52,6 +52,7 @@ public class AdapterListaPreparados extends RecyclerView.Adapter<AdapterListaPre
         seccion= contenidoPedidorecycler.get(position).getSeccion();
         strNotaMesero=contenidoPedidorecycler.get(position).getNota_mesero();
         estatus=contenidoPedidorecycler.get(position).getEstatus();
+        fecha_ingreso=contenidoPedidorecycler.get(position).getFecha_ingreso();
         // fecha_final      = pedidosrecycler.get(position).getFecha_final();
         Log.e("estatus",estatus);
         holder.id_content.setText(id);
@@ -64,6 +65,7 @@ public class AdapterListaPreparados extends RecyclerView.Adapter<AdapterListaPre
         holder.section.setText(seccion);
         holder.nota_meser.setText(strNotaMesero);
         holder.status.setText(estatus);
+        holder.date_star.setText(fecha_ingreso);
 
 
 
@@ -81,7 +83,7 @@ public class AdapterListaPreparados extends RecyclerView.Adapter<AdapterListaPre
 
     }
     public class ViewHolderRecycler extends RecyclerView.ViewHolder {
-        TextView id_content,name,cant,totl,price,extrs,image,section,status,nota_meser;
+        TextView id_content,name,cant,totl,price,extrs,image,section,status,nota_meser,date_star;
 
         public ViewHolderRecycler(View itemView) {
             super(itemView);
@@ -93,7 +95,7 @@ public class AdapterListaPreparados extends RecyclerView.Adapter<AdapterListaPre
             extrs =(TextView)itemView.findViewById(R.id.extras);
             image =(TextView)itemView.findViewById(R.id.imagen);
             status=itemView.findViewById(R.id.estatus);
-
+            date_star=itemView.findViewById(R.id.fecha_ingreso);
             section =(TextView)itemView.findViewById(R.id.seccion);
             nota_meser=itemView.findViewById(R.id.nota_mesero);
         }

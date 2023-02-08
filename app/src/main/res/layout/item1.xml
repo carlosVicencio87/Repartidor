@@ -55,18 +55,27 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_weight="1">
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:gravity="center"
                 android:layout_weight="1">
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mesa:"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:id="@+id/mesa"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="mesa"
                     android:gravity="center"
                     android:textSize="20dp"/>
             </LinearLayout>
@@ -88,45 +97,13 @@
                     android:textSize="16dp" />
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="mesa;"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/mesa"
-                    android:textColor="@color/black"
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="mesa"
-                    android:gravity="center"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="30dp"

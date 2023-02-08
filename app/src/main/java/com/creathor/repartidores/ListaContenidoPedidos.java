@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ListaContenidoPedidos extends AppCompatActivity {
 
-    private String id,nombre,cantidad,total,precio,extras,imagen,seccion,nota_mesero,estatus;
+    private String id,nombre,cantidad,total,precio,extras,imagen,seccion,nota_mesero,estatus,fecha_ingreso;
 
 
 
@@ -26,6 +26,7 @@ public class ListaContenidoPedidos extends AppCompatActivity {
     public String getSeccion() { return seccion; }
     public String getNota_mesero() { return nota_mesero; }
     public String getEstatus(){return  estatus;}
+    public String getFecha_ingreso(){return fecha_ingreso;}
    /* public String getFecha_entrega() { return fecha_entrega; }
     public String getFecha_final() { return fecha_final;}*/
 
@@ -41,13 +42,14 @@ public class ListaContenidoPedidos extends AppCompatActivity {
     public void setSeccion(String seccion) { this.seccion = seccion;}
     public void setNota_mesero(String nota_mesero) { this.nota_mesero = nota_mesero;}
     public void  setEstatus(String estatus){this.estatus=estatus;}
+    public void setFecha_ingreso(String fecha_ingreso){this.fecha_ingreso=fecha_ingreso;}
 
    /* public void setFecha_entrega(String fecha_entrega) { this.fecha_entrega = fecha_entrega;}
     public void setFecha_final(String fecha_final) {this.fecha_final = fecha_final;}*/
 
 
 
-    public ListaContenidoPedidos(String id_content, String name, String cant, String totl, String price,String extrs,String image,String section,String note_mesero,String status){
+    public ListaContenidoPedidos(String id_content, String name, String cant, String totl, String price,String extrs,String image,String section,String note_mesero,String status,String date_star){
 
         this.id =id_content;
         this.nombre=name;
@@ -59,6 +61,7 @@ public class ListaContenidoPedidos extends AppCompatActivity {
         this.seccion=section;
         this.nota_mesero=note_mesero;
         this.estatus=status;
+        this.fecha_ingreso=date_star;
        /* this.fecha_entrega=date_entrega;
         this.fecha_final=date_end;*/
 
